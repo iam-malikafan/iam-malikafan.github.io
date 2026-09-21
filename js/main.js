@@ -3,58 +3,58 @@ document.documentElement.classList.add("js");
 
 const LANG = { "HTML":"#E34F26","CSS":"#1572B6","JavaScript":"#f1e05a","PHP":"#777BB4","Laravel":"#FF2D20",
   "MySQL":"#4479A1","SQL":"#336791","SQLite":"#003B57","Git":"#F05032","REST APIs":"#6a9955","AI Automation":"#3EC46B",
-  "Python":"#3572A5","TypeScript":"#3178c6","Node.js":"#339933" };
+  "Python":"#3572A5","TypeScript":"#3178c6","Node.js":"#339933","Express":"#68A063","Linux":"#f2a900" };
 
 const SITE = {
-  identity:{ first:"Malik", last:"Afan", brand:"Malik Afan", role:"Junior Frontend Developer",
-    blurb:"Frontend developer building clean, responsive interfaces — HTML, CSS & JavaScript on the front, PHP & Laravel on the back, and a growing love for AI automation.",
-    availability:"Available for new work", location:"Pakistan", current:"learning & building every day", years:"1+ years" },
+  identity:{ first:"Malik", last:"Afan", brand:"Malik Afan", role:"Junior Software Engineer",
+    blurb:"Full-stack developer with a backend focus — I build APIs, services and automations in Python & Node.js, deploy and run them on Linux servers, and handle the frontend when a project needs it.",
+    availability:"Available for new work", location:"Pakistan", current:"building backends & automations", years:"1+ years" },
   nav:[{label:"Services",href:"#services",count:"04"},{label:"Work",href:"#work",count:"06"},{label:"Experience",href:"#experience",count:""},{label:"Contact",href:"#contact"}],
   socials:[
     {k:"GitHub",href:"https://github.com/iam-malikafan"},
     {k:"LinkedIn",href:"https://www.linkedin.com/in/malikafan"},
     {k:"Email",href:"mailto:iam.malikafan@gmail.com"},
     {k:"X (Twitter)",href:"#"} ],
-  clients:["Frontend","Web Applications","AI Automation","Clean Code","Responsive UIs","REST APIs","Problem Solving","Always Learning"],
-  about:{ lead:"I build clean interfaces — and love automating the boring parts.",
-    body:"I'm a junior frontend developer at a software house, turning designs into fast, accessible interfaces with <code>HTML</code>, <code>CSS</code> and <code>JavaScript</code>. On the backend I work with <code>PHP</code> &amp; <code>Laravel</code>, and I'm getting deep into <code>AI automation</code>. I care about clean, readable code — and I learn something new every week.",
-    tags:["frontend","laravel","javascript","ai-automation","clean-code"],
-    terminal:["const dev = 'Malik';","while (learning) { build(); }","ship(); // ✓ live","automate.everything();"],
+  clients:["Backend Development","REST APIs","Server & Deployment","Automation","Full-Stack","Databases","Clean Code","Problem Solving"],
+  about:{ lead:"I build the backend that makes things work — then ship it.",
+    body:"I'm a junior software engineer who works full-stack, but I'm strongest on the backend — building APIs and services with <code>Python</code> and <code>Node.js</code>, working with databases, and deploying to <code>Linux</code> servers. I also handle the frontend with <code>HTML</code>, <code>CSS</code> &amp; <code>JavaScript</code> when a project needs it, and I love automating repetitive work with <code>AI</code>.",
+    tags:["backend","python","node.js","server-deployment","full-stack","ai-automation"],
+    terminal:["const dev = 'Malik';","while (learning) { build(); }","deploy(); // ✓ live","automate.everything();"],
     stats:[{val:6,suf:"+",l:"Languages & tools"},{val:1,suf:"+",l:"Years coding"},{val:100,suf:"%",l:"Ownership"},{val:3,suf:"+",l:"Projects building"}] },
   services:[
-    {icon:"web",title:"Frontend Development",sig:"frontend()",desc:"Responsive, accessible interfaces with HTML, CSS & JavaScript."},
-    {icon:"backend",title:"Web Applications",sig:"buildApp()",desc:"Full-stack web apps powered by PHP, Laravel & MySQL."},
-    {icon:"auto",title:"AI Automation",sig:"automate()",desc:"Automating repetitive tasks and wiring up AI-powered workflows."},
-    {icon:"deploy",title:"Backend & Databases",sig:"query()",desc:"APIs and data with Laravel, MySQL, SQL & SQLite."} ],
-  marquee:["HTML","CSS","JavaScript","PHP","Laravel","MySQL","SQL","SQLite","Git","REST APIs","AI Automation"],
+    {icon:"backend",title:"Backend Development",sig:"api()",desc:"APIs, services and server-side logic in Python & Node.js."},
+    {icon:"deploy",title:"Server & Deployment",sig:"deploy()",desc:"Deploying and running apps on Linux servers — setup to live."},
+    {icon:"web",title:"Full-Stack Web Apps",sig:"buildApp()",desc:"End-to-end apps — backend, database and a clean frontend."},
+    {icon:"auto",title:"AI Automation",sig:"automate()",desc:"Automating repetitive tasks and building AI-powered workflows."} ],
+  marquee:["Python","Node.js","JavaScript","Express","REST APIs","MySQL","SQL","SQLite","Linux","Git","HTML","CSS","AI Automation"],
   projects:[
     {title:"portfolio-site",cat:"Live",tag:"Live site",year:"2025",sub:"This portfolio — hand-coded, no frameworks",palette:["#B0A0FF","#6A5BE0"],v:1,lang:"JavaScript",status:"live",
       stack:["HTML","CSS","JavaScript"],live:"https://iam-malikafan.github.io",repo:"https://github.com/iam-malikafan/iam-malikafan.github.io",
       long:"My personal portfolio, built from scratch with vanilla HTML, CSS and JavaScript — responsive across all screens, light/dark mode, and a code-editor theme. No frameworks, no build step."},
-    {title:"task-manager",cat:"Frontend",tag:"App",year:"2025",sub:"A clean to-do app with local storage",palette:["#6FD0C7","#2E8B84"],v:2,lang:"JavaScript",status:"building",
-      stack:["HTML","CSS","JavaScript"],live:"#",repo:"#",
-      long:"A minimal task manager to practise DOM manipulation, state and localStorage — add, edit, filter and persist tasks."},
-    {title:"weather-app",cat:"Frontend",tag:"API",year:"2025",sub:"Live weather from a public API",palette:["#8FA6C4","#465A78"],v:3,lang:"JavaScript",status:"building",
-      stack:["JavaScript","REST APIs"],live:"#",repo:"#",
-      long:"A weather app that fetches live data from a public API — practising fetch, async/await and clean loading/error UI states."},
-    {title:"laravel-crud",cat:"Full-stack",tag:"Laravel",year:"2025",sub:"CRUD app with PHP, Laravel & MySQL",palette:["#F0A868","#C86A2E"],v:0,lang:"PHP",status:"building",
-      stack:["PHP","Laravel","MySQL"],live:"#",repo:"#",
-      long:"A full CRUD application built with Laravel and MySQL — routing, migrations, Eloquent models and Blade views."},
-    {title:"landing-page",cat:"Frontend",tag:"UI",year:"2024",sub:"Responsive marketing landing page",palette:["#7AC49A","#3E8E63"],v:2,lang:"CSS",status:"building",
-      stack:["HTML","CSS"],live:"#",repo:"#",
-      long:"A pixel-clean, fully responsive landing page — flexbox/grid layouts, smooth sections and a mobile-first approach."},
-    {title:"js-quiz",cat:"Frontend",tag:"App",year:"2024",sub:"Interactive quiz game in vanilla JS",palette:["#E39BC0","#B0568C"],v:1,lang:"JavaScript",status:"building",
-      stack:["HTML","CSS","JavaScript"],live:"#",repo:"#",
-      long:"A timed multiple-choice quiz game — score tracking, dynamic questions and result screens, all in vanilla JavaScript."} ],
+    {title:"rest-api",cat:"Backend",tag:"API",year:"2025",sub:"A clean REST API with Node.js & Express",palette:["#6FD0C7","#2E8B84"],v:0,lang:"Node.js",status:"building",
+      stack:["Node.js","Express","REST APIs"],live:"#",repo:"#",
+      long:"A REST API built with Node.js and Express — routing, controllers, validation and JSON responses, backed by a database. Focused on clean, well-structured backend code."},
+    {title:"automation-bot",cat:"Automation",tag:"AI",year:"2025",sub:"AI-powered automation tool in Python",palette:["#B0A0FF","#6A5BE0"],v:3,lang:"Python",status:"building",
+      stack:["Python","AI Automation"],live:"#",repo:"#",
+      long:"A Python automation tool that uses AI to handle repetitive work — takes input, calls an AI model and produces structured output automatically, saving real time."},
+    {title:"fullstack-app",cat:"Full-stack",tag:"App",year:"2025",sub:"End-to-end app: API + database + UI",palette:["#F0A868","#C86A2E"],v:2,lang:"Node.js",status:"building",
+      stack:["Node.js","MySQL","JavaScript"],live:"#",repo:"#",
+      long:"A full-stack web app — Node.js backend with a MySQL database and a clean JavaScript frontend. CRUD, basic auth and a tidy API layer."},
+    {title:"web-scraper",cat:"Automation",tag:"Python",year:"2024",sub:"Data scraper & pipeline in Python",palette:["#7AC49A","#3E8E63"],v:0,lang:"Python",status:"building",
+      stack:["Python","REST APIs"],live:"#",repo:"#",
+      long:"A Python scraper that collects data from the web, cleans it and stores it — practising requests, parsing and reliable, respectful scraping."},
+    {title:"cli-tool",cat:"Backend",tag:"CLI",year:"2024",sub:"A handy command-line automation tool",palette:["#E39BC0","#B0568C"],v:1,lang:"Python",status:"building",
+      stack:["Python"],live:"#",repo:"#",
+      long:"A small command-line tool that automates a real task — argument parsing, clean output and error handling, packaged to run anywhere."} ],
   process:[
-    {n:"step[0]",title:"Understand",desc:"Get the design and the goal clear before writing a line of code."},
-    {n:"step[1]",title:"Build & iterate",desc:"Ship in small pieces, test on real screens, refine as I go."},
-    {n:"step[2]",title:"Polish & ship",desc:"Clean the code, check responsiveness, and push it live."} ],
+    {n:"step[0]",title:"Understand",desc:"Get the problem and the goal clear before writing a line of code."},
+    {n:"step[1]",title:"Build & iterate",desc:"Ship in small pieces, test as I go, and refine fast."},
+    {n:"step[2]",title:"Deploy & maintain",desc:"Clean the code, deploy it to a server, and keep it running."} ],
   experience:[
-    {co:"Software House",ro:"Junior Frontend Developer",dt:"2025 — Now",palette:["#B0A0FF","#6A5BE0"]},
-    {co:"Self-taught",ro:"Frontend + PHP / Laravel",dt:"2024 — 2025",palette:["#6FD0C7","#2E8B84"]},
-    {co:"Learning to code",ro:"HTML · CSS · JavaScript",dt:"2023 — 2024",palette:["#F0A868","#C86A2E"]} ],
-  now:[{k:"Building",v:"My first real projects"},{k:"Learning",v:"Deeper JavaScript & Laravel"},{k:"Exploring",v:"AI-powered automation"}],
+    {co:"Software House",ro:"Junior Software Engineer",dt:"2025 — Now",palette:["#B0A0FF","#6A5BE0"]},
+    {co:"Self-taught",ro:"Backend · Python · Node.js",dt:"2024 — 2025",palette:["#6FD0C7","#2E8B84"]},
+    {co:"Learning to code",ro:"Programming fundamentals",dt:"2023 — 2024",palette:["#F0A868","#C86A2E"]} ],
+  now:[{k:"Building",v:"APIs & automation tools"},{k:"Learning",v:"Deeper Node.js & Python"},{k:"Exploring",v:"AI-powered automation"}],
   commits:[
     {h:"a3f9c1",type:"feat",m:"add dark mode toggle",t:"2h ago"},
     {h:"7be204",type:"style",m:"polish responsive hero",t:"1d ago"},
@@ -99,8 +99,8 @@ const ICONS={
 function profileCode(){ const L=(n,h)=>`<div><span class="ln">${n}</span>${h}</div>`;
   return [L(1,`<span class="tk-kw">const</span> <span class="tk-prop">profile</span> <span class="tk-punc">=</span> <span class="tk-punc">{</span>`),
     L(2,`&nbsp;&nbsp;name<span class="tk-punc">:</span> <span class="tk-str">"Malik Afan"</span><span class="tk-punc">,</span>`),
-    L(3,`&nbsp;&nbsp;role<span class="tk-punc">:</span> <span class="tk-str">"Junior Frontend Developer"</span><span class="tk-punc">,</span>`),
-    L(4,`&nbsp;&nbsp;stack<span class="tk-punc">:</span> <span class="tk-punc">[</span><span class="tk-str">"HTML"</span><span class="tk-punc">,</span> <span class="tk-str">"CSS"</span><span class="tk-punc">,</span> <span class="tk-str">"JS"</span><span class="tk-punc">]</span><span class="tk-punc">,</span>`),
+    L(3,`&nbsp;&nbsp;role<span class="tk-punc">:</span> <span class="tk-str">"Junior Software Engineer"</span><span class="tk-punc">,</span>`),
+    L(4,`&nbsp;&nbsp;stack<span class="tk-punc">:</span> <span class="tk-punc">[</span><span class="tk-str">"Python"</span><span class="tk-punc">,</span> <span class="tk-str">"Node.js"</span><span class="tk-punc">,</span> <span class="tk-str">"JS"</span><span class="tk-punc">]</span><span class="tk-punc">,</span>`),
     L(5,`&nbsp;&nbsp;learning<span class="tk-punc">:</span> <span class="tk-kw">true</span><span class="tk-punc">,</span>`),
     L(6,`&nbsp;&nbsp;available<span class="tk-punc">:</span> <span class="tk-kw">true</span><span class="tk-punc">,</span>`),
     L(7,`<span class="tk-punc">}</span><span class="tk-punc">;</span>`)].join(""); }
@@ -150,8 +150,8 @@ function initCodeWin(){
   const box=$("[data-codewin]"); if(!box) return;
   const lines=[
     `<span class="tk-kw">const</span> <span class="tk-prop">malik</span> <span class="tk-punc">=</span> <span class="tk-punc">{</span>`,
-    `&nbsp;&nbsp;role<span class="tk-punc">:</span> <span class="tk-str">"Frontend Developer"</span><span class="tk-punc">,</span>`,
-    `&nbsp;&nbsp;stack<span class="tk-punc">:</span> <span class="tk-punc">[</span><span class="tk-str">"JS"</span><span class="tk-punc">,</span> <span class="tk-str">"Laravel"</span><span class="tk-punc">]</span><span class="tk-punc">,</span>`,
+    `&nbsp;&nbsp;role<span class="tk-punc">:</span> <span class="tk-str">"Software Engineer"</span><span class="tk-punc">,</span>`,
+    `&nbsp;&nbsp;stack<span class="tk-punc">:</span> <span class="tk-punc">[</span><span class="tk-str">"Python"</span><span class="tk-punc">,</span> <span class="tk-str">"Node.js"</span><span class="tk-punc">]</span><span class="tk-punc">,</span>`,
     `&nbsp;&nbsp;learns<span class="tk-punc">:</span> <span class="tk-kw">true</span><span class="tk-punc">,</span>`,
     `<span class="tk-punc">}</span><span class="tk-punc">;</span>`,
     ``,
@@ -162,7 +162,7 @@ function initCodeWin(){
   html+=`<div><span class="ln">${lines.length+2}</span><span class="tk-punc">}</span></div>`;
   box.innerHTML=html;
   const el=$("#cw-type"); if(!el||REDUCED){ if(el) el.textContent="idea"; return; }
-  const opts=["idea","design","the ui","a feature"]; let li=0,ci=0,del=false;
+  const opts=["an API","a service","automation","a tool"]; let li=0,ci=0,del=false;
   (function tick(){ const w=opts[li];
     if(!del){ el.textContent=w.slice(0,++ci); if(ci===w.length){ del=true; return setTimeout(tick,1700);} }
     else{ el.textContent=w.slice(0,--ci); if(ci===0){ del=false; li=(li+1)%opts.length; } }
