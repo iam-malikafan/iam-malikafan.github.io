@@ -1,69 +1,86 @@
 /* ============================ Malik Afan — portfolio logic ============================ */
 document.documentElement.classList.add("js");
 
-const LANG = { "Python":"#3572A5","FastAPI":"#05998b","Flask":"#9aa0a6","JavaScript":"#f1e05a","Node.js":"#339933",
-  "TypeScript":"#3178c6","Linux":"#FCC624","Docker":"#2496ED","PostgreSQL":"#336791","Redis":"#DC382D","Git":"#F05032",
-  "Playwright":"#2EAD33","REST APIs":"#6a9955","Nginx":"#009639","Go":"#00ADD8","Rust":"#dea584" };
+const LANG = { "HTML":"#E34F26","CSS":"#1572B6","JavaScript":"#f1e05a","PHP":"#777BB4","Laravel":"#FF2D20",
+  "MySQL":"#4479A1","SQL":"#336791","SQLite":"#003B57","Git":"#F05032","REST APIs":"#6a9955","AI Automation":"#3EC46B",
+  "Python":"#3572A5","TypeScript":"#3178c6","Node.js":"#339933" };
 
 const SITE = {
-  identity:{ first:"Malik", last:"Afan", brand:"Malik Afan", role:"Software Engineer",
-    blurb:"Building practical software, automation systems and web apps — backend logic to production deployment.",
-    availability:"Available for new work", location:"Pakistan", current:"building automation systems", years:"5+ years" },
-  nav:[{label:"Services",href:"#services",count:"04"},{label:"Work",href:"#work",count:"06"},{label:"Experience",href:"#experience",count:"5y+"},{label:"Contact",href:"#contact"}],
-  socials:[{k:"GitHub",href:"#"},{k:"LinkedIn",href:"#"},{k:"Email",href:"#"},{k:"X (Twitter)",href:"#"}],
-  clients:["Northwind","Kite Labs","Basewave","Orbit","Pinecone","Studio Ten","Fathom","Maple"],
-  about:{ lead:"I build the quiet systems behind products.",
-    body:"The interesting problems are rarely the visible ones — they live in the <code>pipeline</code>, the <code>retry loop</code>, the thing that has to survive at 3am. I work close to the machine: backend logic, automation, and the infrastructure that keeps everything running, reliable, and easy to reason about.",
-    tags:["backend","automation","infra","APIs","CI/CD"],
-    terminal:["const dev = 'Malik';","while (coffee) { ship(); }","deploy(); // ✓ live","automate.everything();"],
-    stats:[{val:12,suf:"+",l:"Systems shipped"},{val:5,suf:"y+",l:"Writing code"},{val:99.9,suf:"%",l:"Uptime focus",dec:1},{val:40,suf:"+",l:"Automations live"}] },
+  identity:{ first:"Malik", last:"Afan", brand:"Malik Afan", role:"Junior Frontend Developer",
+    blurb:"Frontend developer building clean, responsive interfaces — HTML, CSS & JavaScript on the front, PHP & Laravel on the back, and a growing love for AI automation.",
+    availability:"Available for new work", location:"Pakistan", current:"learning & building every day", years:"1+ years" },
+  nav:[{label:"Services",href:"#services",count:"04"},{label:"Work",href:"#work",count:"06"},{label:"Experience",href:"#experience",count:""},{label:"Contact",href:"#contact"}],
+  socials:[
+    {k:"GitHub",href:"https://github.com/iam-malikafan"},
+    {k:"LinkedIn",href:"https://www.linkedin.com/in/malikafan"},
+    {k:"Email",href:"mailto:iam.malikafan@gmail.com"},
+    {k:"X (Twitter)",href:"#"} ],
+  clients:["Frontend","Web Applications","AI Automation","Clean Code","Responsive UIs","REST APIs","Problem Solving","Always Learning"],
+  about:{ lead:"I build clean interfaces — and love automating the boring parts.",
+    body:"I'm a junior frontend developer at a software house, turning designs into fast, accessible interfaces with <code>HTML</code>, <code>CSS</code> and <code>JavaScript</code>. On the backend I work with <code>PHP</code> &amp; <code>Laravel</code>, and I'm getting deep into <code>AI automation</code>. I care about clean, readable code — and I learn something new every week.",
+    tags:["frontend","laravel","javascript","ai-automation","clean-code"],
+    terminal:["const dev = 'Malik';","while (learning) { build(); }","ship(); // ✓ live","automate.everything();"],
+    stats:[{val:6,suf:"+",l:"Languages & tools"},{val:1,suf:"+",l:"Years coding"},{val:100,suf:"%",l:"Ownership"},{val:3,suf:"+",l:"Projects building"}] },
   services:[
-    {icon:"backend",title:"Backend Engineering",sig:"backend()",desc:"APIs, services and data layers built to be typed, tested and boring in the best way."},
-    {icon:"auto",title:"Automation",sig:"automate()",desc:"Scripts, workers and pipelines that do the repetitive work so people don't have to."},
-    {icon:"web",title:"Web Applications",sig:"render()",desc:"Fast, accessible interfaces wired to real backends — not just pretty mockups."},
-    {icon:"deploy",title:"Deployment & Ops",sig:"deploy()",desc:"Reverse proxies, CI, monitoring — getting it live and keeping it healthy."} ],
-  marquee:["Python","FastAPI","Flask","JavaScript","Node.js","TypeScript","Linux","Docker","PostgreSQL","Redis","Git","Playwright","REST APIs","Nginx"],
+    {icon:"web",title:"Frontend Development",sig:"frontend()",desc:"Responsive, accessible interfaces with HTML, CSS & JavaScript."},
+    {icon:"backend",title:"Web Applications",sig:"buildApp()",desc:"Full-stack web apps powered by PHP, Laravel & MySQL."},
+    {icon:"auto",title:"AI Automation",sig:"automate()",desc:"Automating repetitive tasks and wiring up AI-powered workflows."},
+    {icon:"deploy",title:"Backend & Databases",sig:"query()",desc:"APIs and data with Laravel, MySQL, SQL & SQLite."} ],
+  marquee:["HTML","CSS","JavaScript","PHP","Laravel","MySQL","SQL","SQLite","Git","REST APIs","AI Automation"],
   projects:[
-    {title:"local-scope",cat:"Systems",tag:"Platform",year:"2025",sub:"Automated SEO intelligence platform",palette:["#B0A0FF","#6A5BE0"],v:1,lang:"TypeScript",stars:128,forks:24,vis:"public"},
-    {title:"data-engine",cat:"Systems",tag:"Backend",year:"2025",sub:"High-volume web data extraction",palette:["#6FD0C7","#2E8B84"],v:3,lang:"Python",stars:94,forks:12,vis:"private"},
-    {title:"automation-lab",cat:"Automation",tag:"Infra",year:"2024",sub:"Browser automation & workflows",palette:["#F0A868","#C86A2E"],v:0,lang:"Python",stars:61,forks:8,vis:"public"},
-    {title:"proxy-mesh",cat:"Web",tag:"Tooling",year:"2024",sub:"Reverse-proxy tooling & billing",palette:["#8FA6C4","#465A78"],v:1,lang:"Go",stars:73,forks:15,vis:"private"},
-    {title:"signal-board",cat:"Web",tag:"Dashboard",year:"2023",sub:"Realtime ops dashboard",palette:["#7AC49A","#3E8E63"],v:3,lang:"TypeScript",stars:47,forks:6,vis:"public"},
-    {title:"cron-keeper",cat:"Automation",tag:"Service",year:"2023",sub:"Job scheduling & alerting",palette:["#E39BC0","#B0568C"],v:2,lang:"Rust",stars:39,forks:4,vis:"public"} ],
+    {title:"portfolio-site",cat:"Live",tag:"Live site",year:"2025",sub:"This portfolio — hand-coded, no frameworks",palette:["#B0A0FF","#6A5BE0"],v:1,lang:"JavaScript",status:"live",
+      stack:["HTML","CSS","JavaScript"],live:"https://iam-malikafan.github.io",repo:"https://github.com/iam-malikafan/iam-malikafan.github.io",
+      long:"My personal portfolio, built from scratch with vanilla HTML, CSS and JavaScript — responsive across all screens, light/dark mode, and a code-editor theme. No frameworks, no build step."},
+    {title:"task-manager",cat:"Frontend",tag:"App",year:"2025",sub:"A clean to-do app with local storage",palette:["#6FD0C7","#2E8B84"],v:2,lang:"JavaScript",status:"building",
+      stack:["HTML","CSS","JavaScript"],live:"#",repo:"#",
+      long:"A minimal task manager to practise DOM manipulation, state and localStorage — add, edit, filter and persist tasks."},
+    {title:"weather-app",cat:"Frontend",tag:"API",year:"2025",sub:"Live weather from a public API",palette:["#8FA6C4","#465A78"],v:3,lang:"JavaScript",status:"building",
+      stack:["JavaScript","REST APIs"],live:"#",repo:"#",
+      long:"A weather app that fetches live data from a public API — practising fetch, async/await and clean loading/error UI states."},
+    {title:"laravel-crud",cat:"Full-stack",tag:"Laravel",year:"2025",sub:"CRUD app with PHP, Laravel & MySQL",palette:["#F0A868","#C86A2E"],v:0,lang:"PHP",status:"building",
+      stack:["PHP","Laravel","MySQL"],live:"#",repo:"#",
+      long:"A full CRUD application built with Laravel and MySQL — routing, migrations, Eloquent models and Blade views."},
+    {title:"landing-page",cat:"Frontend",tag:"UI",year:"2024",sub:"Responsive marketing landing page",palette:["#7AC49A","#3E8E63"],v:2,lang:"CSS",status:"building",
+      stack:["HTML","CSS"],live:"#",repo:"#",
+      long:"A pixel-clean, fully responsive landing page — flexbox/grid layouts, smooth sections and a mobile-first approach."},
+    {title:"js-quiz",cat:"Frontend",tag:"App",year:"2024",sub:"Interactive quiz game in vanilla JS",palette:["#E39BC0","#B0568C"],v:1,lang:"JavaScript",status:"building",
+      stack:["HTML","CSS","JavaScript"],live:"#",repo:"#",
+      long:"A timed multiple-choice quiz game — score tracking, dynamic questions and result screens, all in vanilla JavaScript."} ],
   process:[
-    {n:"step[0]",title:"Discover & scope",desc:"Understand the real problem, the constraints, and what 'done' looks like."},
-    {n:"step[1]",title:"Build & iterate",desc:"Ship in small loops with working software you can actually try."},
-    {n:"step[2]",title:"Ship & maintain",desc:"Deploy, monitor, and keep it reliable long after launch day."} ],
+    {n:"step[0]",title:"Understand",desc:"Get the design and the goal clear before writing a line of code."},
+    {n:"step[1]",title:"Build & iterate",desc:"Ship in small pieces, test on real screens, refine as I go."},
+    {n:"step[2]",title:"Polish & ship",desc:"Clean the code, check responsiveness, and push it live."} ],
   experience:[
-    {co:"Independent",ro:"Software Engineer",dt:"2024 — Now",palette:["#B0A0FF","#6A5BE0"]},
-    {co:"Studio North",ro:"Backend Developer",dt:"2022 — 2024",palette:["#6FD0C7","#2E8B84"]},
-    {co:"Kite Labs",ro:"Automation Engineer",dt:"2021 — 2022",palette:["#F0A868","#C86A2E"]},
-    {co:"Agency Ten",ro:"Full-stack Developer",dt:"2020 — 2021",palette:["#8FA6C4","#465A78"]},
-    {co:"Freelance",ro:"Junior Developer",dt:"2019 — 2020",palette:["#E39BC0","#B0568C"]} ],
-  now:[{k:"Building",v:"A workflow automation platform"},{k:"Learning",v:"Rust & systems programming"},{k:"Reading",v:"Designing Data-Intensive Apps"}],
+    {co:"Software House",ro:"Junior Frontend Developer",dt:"2025 — Now",palette:["#B0A0FF","#6A5BE0"]},
+    {co:"Self-taught",ro:"Frontend + PHP / Laravel",dt:"2024 — 2025",palette:["#6FD0C7","#2E8B84"]},
+    {co:"Learning to code",ro:"HTML · CSS · JavaScript",dt:"2023 — 2024",palette:["#F0A868","#C86A2E"]} ],
+  now:[{k:"Building",v:"My first real projects"},{k:"Learning",v:"Deeper JavaScript & Laravel"},{k:"Exploring",v:"AI-powered automation"}],
   commits:[
-    {h:"a3f9c1",type:"feat",m:"ship automation worker pool",t:"2h ago"},
-    {h:"7be204",type:"fix",m:"retry backoff on 429s",t:"1d ago"},
-    {h:"1c88de",type:"refactor",m:"extract proxy rotation",t:"2d ago"},
-    {h:"e50a77",type:"perf",m:"cache hot ranking queries",t:"4d ago"},
-    {h:"9d2b10",type:"chore",m:"bump deps + CI matrix",t:"5d ago"} ],
+    {h:"a3f9c1",type:"feat",m:"add dark mode toggle",t:"2h ago"},
+    {h:"7be204",type:"style",m:"polish responsive hero",t:"1d ago"},
+    {h:"1c88de",type:"feat",m:"build contact form",t:"2d ago"},
+    {h:"e50a77",type:"fix",m:"center portrait on mobile",t:"4d ago"},
+    {h:"9d2b10",type:"chore",m:"init portfolio",t:"5d ago"} ],
   deploy:[
-    {c:"com",t:"$ npm run deploy"},{c:"dim",t:"→ building project ..."},{c:"ok",t:"✓ compiled 128 modules (2.4s)"},
-    {c:"dim",t:"→ running tests ..."},{c:"ok",t:"✓ 214 passed, 0 failed"},{c:"dim",t:"→ pushing image ..."},
-    {c:"path",t:"  malikafan/api:2.4.0  sha256:9f1c…"},{c:"dim",t:"→ rolling out to production ..."},{c:"ok",t:"✓ deployed. live at https://malikafan.dev"} ],
+    {c:"com",t:"$ git push origin main"},{c:"dim",t:"→ deploying to GitHub Pages ..."},{c:"ok",t:"✓ build complete"},
+    {c:"dim",t:"→ publishing site ..."},{c:"path",t:"  branch: main  ·  /(root)"},{c:"ok",t:"✓ live at https://iam-malikafan.github.io"} ],
   testimonials:[
     {q:"He turns messy, half-defined problems into systems that just quietly work.",nm:"A. Rahman",rl:"Project Lead",c:"#6A5BE0"},
     {q:"Shipped faster than anyone expected — and it's still running untouched a year later.",nm:"S. Malik",rl:"Founder, Basewave",c:"#2E8B84"},
-    {q:"Rare mix: writes clean backend code and actually thinks about ops and reliability.",nm:"J. Ortiz",rl:"Eng Manager",c:"#C86A2E"} ],
-  contact:{ titleLines:["Let's build","*something useful*."], cta:[{label:"GitHub ↗",href:"#"},{label:"LinkedIn ↗",href:"#"},{label:"X (Twitter) ↗",href:"#"}] },
+    {q:"Rare mix: writes clean code and actually thinks about the details.",nm:"J. Ortiz",rl:"Eng Manager",c:"#C86A2E"} ],
+  contact:{ titleLines:["Let's build","*something great*."], cta:[
+    {label:"GitHub ↗",href:"https://github.com/iam-malikafan"},
+    {label:"LinkedIn ↗",href:"https://www.linkedin.com/in/malikafan"},
+    {label:"X (Twitter) ↗",href:"#"} ] },
 };
-const CODE_LINES=["const app = express();","await db.connect();","for (const j of queue) run(j);","if (res.status===429) backoff();","export default handler;","return json({ ok:true });","docker build -t api .","git commit -m 'ship it'","async def main(): ...","SELECT * FROM users;","npm run deploy --prod","const [x,setX]=useState(0);","try { ship() } catch(e){}","curl -s https://api/health"];
+const CODE_LINES=["const app = () => {};","document.querySelector('.x')","fetch('/api/data')","addEventListener('click', fn)","for (const el of items)","if (res.ok) render(data)","git commit -m 'ship it'","<div class=\"card\"></div>","SELECT * FROM users;","Route::get('/', fn)","const [x,setX]=useState(0);","php artisan serve","npm run dev","el.classList.toggle('on')"];
 
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
 const IS_TOUCH=matchMedia("(hover: none)").matches||"ontouchstart" in window;
 const IS_MOBILE=matchMedia("(max-width:860px)").matches;
 const REDUCED=matchMedia("(prefers-reduced-motion: reduce)").matches;
 const accOutline=s=>s.replace(/\*([^*]+)\*/g,'<span class="outline">$1</span>');
+const extAttr=h=>(/^https?:/i.test(h)?' target="_blank" rel="noopener"':'');
 function mockThumb([c1,c2],seed=0,v=0){
   const g=`<defs><linearGradient id="g${seed}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient></defs><rect width="320" height="200" fill="url(#g${seed})"/>`;
   const dots=`<g fill="rgba(255,255,255,.9)"><circle cx="26" cy="24" r="4"/><circle cx="40" cy="24" r="4"/><circle cx="54" cy="24" r="4"/></g>`;
@@ -82,9 +99,9 @@ const ICONS={
 function profileCode(){ const L=(n,h)=>`<div><span class="ln">${n}</span>${h}</div>`;
   return [L(1,`<span class="tk-kw">const</span> <span class="tk-prop">profile</span> <span class="tk-punc">=</span> <span class="tk-punc">{</span>`),
     L(2,`&nbsp;&nbsp;name<span class="tk-punc">:</span> <span class="tk-str">"Malik Afan"</span><span class="tk-punc">,</span>`),
-    L(3,`&nbsp;&nbsp;role<span class="tk-punc">:</span> <span class="tk-str">"Software Engineer"</span><span class="tk-punc">,</span>`),
-    L(4,`&nbsp;&nbsp;stack<span class="tk-punc">:</span> <span class="tk-punc">[</span><span class="tk-str">"Python"</span><span class="tk-punc">,</span> <span class="tk-str">"FastAPI"</span><span class="tk-punc">,</span> <span class="tk-str">"Node"</span><span class="tk-punc">]</span><span class="tk-punc">,</span>`),
-    L(5,`&nbsp;&nbsp;years<span class="tk-punc">:</span> <span class="tk-num">5</span><span class="tk-punc">,</span>`),
+    L(3,`&nbsp;&nbsp;role<span class="tk-punc">:</span> <span class="tk-str">"Junior Frontend Developer"</span><span class="tk-punc">,</span>`),
+    L(4,`&nbsp;&nbsp;stack<span class="tk-punc">:</span> <span class="tk-punc">[</span><span class="tk-str">"HTML"</span><span class="tk-punc">,</span> <span class="tk-str">"CSS"</span><span class="tk-punc">,</span> <span class="tk-str">"JS"</span><span class="tk-punc">]</span><span class="tk-punc">,</span>`),
+    L(5,`&nbsp;&nbsp;learning<span class="tk-punc">:</span> <span class="tk-kw">true</span><span class="tk-punc">,</span>`),
     L(6,`&nbsp;&nbsp;available<span class="tk-punc">:</span> <span class="tk-kw">true</span><span class="tk-punc">,</span>`),
     L(7,`<span class="tk-punc">}</span><span class="tk-punc">;</span>`)].join(""); }
 
@@ -102,7 +119,7 @@ function hydrate(){
   $("[data-hero-name]").innerHTML=`<span class="word outline"><span>${id.first.toUpperCase()}</span></span><span class="word solid"><span>${id.last.toUpperCase()}</span></span>`;
   $("[data-role]").textContent=id.role;
   $("[data-blurb]").textContent=id.blurb;
-  $("[data-socials]").innerHTML=SITE.socials.map(s=>`<a class="pill" href="${s.href}" data-cursor>${s.k} <span class="a">↗</span></a>`).join("");
+  $("[data-socials]").innerHTML=SITE.socials.map(s=>`<a class="pill" href="${s.href}"${extAttr(s.href)} data-cursor>${s.k} <span class="a">↗</span></a>`).join("");
   const clients=`<span>${SITE.clients.join('</span><span>')}</span>`; $("[data-clients]").innerHTML=clients+clients;
   $("[data-lead]").textContent=SITE.about.lead;
   $("[data-body]").innerHTML=SITE.about.body;
@@ -113,7 +130,7 @@ function hydrate(){
   $("[data-marquee]").innerHTML=(SITE.marquee.map(t=>`<span class="chip"><i style="background:${LANG[t]||"#888"}"></i>${t}</span>`).join("")).repeat(2);
   const cats=["All",...Array.from(new Set(SITE.projects.map(p=>p.cat)))];
   $("[data-tabs]").innerHTML=cats.map((c,i)=>`<button class="tab${i===0?" active":""}" data-cat="${c}">${c}</button>`).join("");
-  $("[data-projects]").innerHTML=SITE.projects.map((p,i)=>`<article class="card reveal" data-cat="${p.cat}" data-view data-i="${i}"><div class="thumb"><span class="tag">${p.tag}</span><span class="vis">${p.vis}</span><span class="arw">↗</span><div class="art">${mockThumb(p.palette,i,p.v)}</div></div><div class="meta"><div class="top"><h3><span class="slash">malik/</span>${p.title}</h3><div class="yr" style="font-family:var(--fm);font-size:.78rem;color:var(--faint)">${p.year}</div></div><div class="sub">${p.sub}</div><div class="repo-meta"><span class="lang"><i style="background:${LANG[p.lang]||"#888"}"></i>${p.lang}</span><span>★ ${p.stars}</span><span>⑂ ${p.forks}</span></div></div></article>`).join("");
+  $("[data-projects]").innerHTML=SITE.projects.map((p,i)=>`<article class="card reveal" data-cat="${p.cat}" data-view data-i="${i}" style="cursor:pointer"><div class="thumb"><span class="tag">${p.tag}</span><span class="vis">${p.status}</span><span class="arw">↗</span><div class="art">${mockThumb(p.palette,i,p.v)}</div></div><div class="meta"><div class="top"><h3><span class="slash">malik/</span>${p.title}</h3><div class="yr" style="font-family:var(--fm);font-size:.78rem;color:var(--faint)">${p.year}</div></div><div class="sub">${p.sub}</div><div class="repo-meta"><span class="lang"><i style="background:${LANG[p.lang]||"#888"}"></i>${p.lang}</span><span>view details ↗</span></div></div></article>`).join("");
   $("[data-process]").innerHTML=SITE.process.map(s=>`<div class="step reveal"><div class="n">${s.n}</div><h3>${s.title}</h3><p>${s.desc}</p></div>`).join("");
   $("[data-years]").textContent=id.years+" of experience";
   $("[data-experience]").innerHTML=SITE.experience.map((e,i)=>`<div class="exp-row" data-i="${i}"><div class="en">0${i+1}</div><div><div class="co">${e.co}</div><div class="ro">${e.ro}</div></div><div class="dt">${e.dt}</div></div>`).join("");
@@ -122,10 +139,10 @@ function hydrate(){
   $("[data-testimonials]").innerHTML=SITE.testimonials.map(t=>{const ini=t.nm.split(" ").map(w=>w[0]).join("").slice(0,2);
     return `<div class="tcard reveal"><div class="rtag">reviewed profile.ts</div><blockquote>${t.q}</blockquote><div class="who"><span class="av" style="background:${t.c}">${ini}</span><div><div class="nm">${t.nm}</div><div class="rl">${t.rl}</div></div></div></div>`;}).join("");
   $("[data-contact-title]").innerHTML=SITE.contact.titleLines.map(l=>accOutline(l)).join("<br>");
-  $("[data-contact-cta]").innerHTML=SITE.contact.cta.map(c=>`<a class="pill${c.solid?" solid":""}" href="${c.href}" data-cursor>${c.label}</a>`).join("");
+  $("[data-contact-cta]").innerHTML=SITE.contact.cta.map(c=>`<a class="pill${c.solid?" solid":""}" href="${c.href}"${extAttr(c.href)} data-cursor>${c.label}</a>`).join("");
   $("[data-fbrand]").textContent=id.brand;
   $("[data-fnav]").innerHTML=`<h4>Menu</h4>`+SITE.nav.map(n=>`<a href="${n.href}">${n.label}</a>`).join("");
-  $("[data-fsocial]").innerHTML=`<h4>Elsewhere</h4>`+SITE.socials.map(s=>`<a href="${s.href}">${s.k}</a>`).join("");
+  $("[data-fsocial]").innerHTML=`<h4>Elsewhere</h4>`+SITE.socials.map(s=>`<a href="${s.href}"${extAttr(s.href)}>${s.k}</a>`).join("");
 }
 
 /* ============================ hero code window ============================ */
@@ -133,23 +150,82 @@ function initCodeWin(){
   const box=$("[data-codewin]"); if(!box) return;
   const lines=[
     `<span class="tk-kw">const</span> <span class="tk-prop">malik</span> <span class="tk-punc">=</span> <span class="tk-punc">{</span>`,
-    `&nbsp;&nbsp;role<span class="tk-punc">:</span> <span class="tk-str">"Software Engineer"</span><span class="tk-punc">,</span>`,
-    `&nbsp;&nbsp;stack<span class="tk-punc">:</span> <span class="tk-punc">[</span><span class="tk-str">"Python"</span><span class="tk-punc">,</span> <span class="tk-str">"Node"</span><span class="tk-punc">]</span><span class="tk-punc">,</span>`,
-    `&nbsp;&nbsp;ships<span class="tk-punc">:</span> <span class="tk-kw">true</span><span class="tk-punc">,</span>`,
+    `&nbsp;&nbsp;role<span class="tk-punc">:</span> <span class="tk-str">"Frontend Developer"</span><span class="tk-punc">,</span>`,
+    `&nbsp;&nbsp;stack<span class="tk-punc">:</span> <span class="tk-punc">[</span><span class="tk-str">"JS"</span><span class="tk-punc">,</span> <span class="tk-str">"Laravel"</span><span class="tk-punc">]</span><span class="tk-punc">,</span>`,
+    `&nbsp;&nbsp;learns<span class="tk-punc">:</span> <span class="tk-kw">true</span><span class="tk-punc">,</span>`,
     `<span class="tk-punc">}</span><span class="tk-punc">;</span>`,
     ``,
     `<span class="tk-kw">async function</span> <span class="tk-fn">build</span><span class="tk-punc">(</span>idea<span class="tk-punc">)</span> <span class="tk-punc">{</span>`
   ];
   let html=lines.map((l,i)=>`<div><span class="ln">${l===""?"&nbsp;":i+1}</span>${l}</div>`).join("");
-  html+=`<div><span class="ln">${lines.length+1}</span>&nbsp;&nbsp;<span class="tk-kw">return</span> <span class="tk-kw">await</span> <span class="tk-fn">deploy</span><span class="tk-punc">(</span><span class="tk-str">"<span id="cw-type"></span>"</span><span class="cw-cur"></span><span class="tk-punc">);</span></div>`;
+  html+=`<div><span class="ln">${lines.length+1}</span>&nbsp;&nbsp;<span class="tk-kw">return</span> <span class="tk-kw">await</span> <span class="tk-fn">ship</span><span class="tk-punc">(</span><span class="tk-str">"<span id="cw-type"></span>"</span><span class="cw-cur"></span><span class="tk-punc">);</span></div>`;
   html+=`<div><span class="ln">${lines.length+2}</span><span class="tk-punc">}</span></div>`;
   box.innerHTML=html;
   const el=$("#cw-type"); if(!el||REDUCED){ if(el) el.textContent="idea"; return; }
-  const opts=["idea","spec","the mvp","backlog"]; let li=0,ci=0,del=false;
+  const opts=["idea","design","the ui","a feature"]; let li=0,ci=0,del=false;
   (function tick(){ const w=opts[li];
     if(!del){ el.textContent=w.slice(0,++ci); if(ci===w.length){ del=true; return setTimeout(tick,1700);} }
     else{ el.textContent=w.slice(0,--ci); if(ci===0){ del=false; li=(li+1)%opts.length; } }
     setTimeout(tick,del?45:95); })();
+}
+
+/* ============================ project modal ============================ */
+function initProjectModal(){
+  const style=document.createElement("style");
+  style.textContent=`
+  .pmodal{ position:fixed; inset:0; z-index:2000; display:grid; place-items:center; padding:1.2rem; opacity:0; pointer-events:none; transition:opacity .3s var(--ease); }
+  .pmodal.show{ opacity:1; pointer-events:auto; }
+  .pmodal-bg{ position:absolute; inset:0; background:rgba(8,10,14,.6); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); }
+  .pmodal-card{ position:relative; z-index:1; width:min(660px,100%); max-height:88svh; overflow:auto; background:var(--card); border:1px solid var(--line); border-radius:20px; box-shadow:0 40px 100px -30px rgba(8,12,18,.6); transform:translateY(18px) scale(.98); transition:transform .35s var(--ease); }
+  .pmodal.show .pmodal-card{ transform:none; }
+  .pmodal-x{ position:absolute; top:.9rem; right:.9rem; z-index:2; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:var(--card); color:var(--ink); cursor:pointer; font-size:.95rem; display:grid; place-items:center; transition:border-color .25s var(--ease); }
+  .pmodal-x:hover{ border-color:var(--ink); }
+  .pmodal-thumb{ aspect-ratio:16/8; overflow:hidden; border-radius:19px 19px 0 0; } .pmodal-thumb svg{ width:100%; height:100%; }
+  .pmodal-in{ padding:1.4rem clamp(1.2rem,3vw,2rem) 1.8rem; }
+  .pmodal-top{ display:flex; gap:1rem; align-items:center; font-family:var(--fm); font-size:.72rem; color:var(--faint); text-transform:uppercase; letter-spacing:.06em; margin-bottom:.5rem; }
+  .pmodal-top .cat{ color:var(--green); }
+  .pmodal-in h3{ font-family:var(--fd); font-weight:700; font-size:clamp(1.4rem,3vw,1.9rem); line-height:1.1; }
+  .pmodal-in h3 .s{ color:var(--faint); font-weight:500; }
+  .pmodal-desc{ color:var(--dim); margin:.8rem 0 1.2rem; line-height:1.6; font-size:.98rem; }
+  .pmodal-tech{ display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1.4rem; }
+  .pm-chip{ display:inline-flex; align-items:center; gap:.45rem; font-family:var(--fm); font-size:.78rem; border:1px solid var(--line); border-radius:100px; padding:.35rem .8rem; }
+  .pm-chip i{ width:9px; height:9px; border-radius:50%; }
+  .pmodal-links{ display:flex; gap:.7rem; flex-wrap:wrap; align-items:center; }
+  .pmodal-soon{ font-family:var(--fm); font-size:.82rem; color:var(--faint); }`;
+  document.head.appendChild(style);
+
+  const m=document.createElement("div"); m.className="pmodal"; m.setAttribute("aria-hidden","true");
+  m.innerHTML=`<div class="pmodal-bg" data-pmclose></div><div class="pmodal-card" role="dialog" aria-modal="true">
+    <button class="pmodal-x" data-pmclose aria-label="Close">✕</button>
+    <div class="pmodal-thumb" data-pm-thumb></div>
+    <div class="pmodal-in">
+      <div class="pmodal-top"><span class="cat" data-pm-cat></span><span data-pm-year></span></div>
+      <h3 data-pm-title></h3>
+      <p class="pmodal-desc" data-pm-desc></p>
+      <div class="pmodal-tech" data-pm-tech></div>
+      <div class="pmodal-links" data-pm-links></div>
+    </div></div>`;
+  document.body.appendChild(m);
+
+  function open(i){
+    const p=SITE.projects[i]; if(!p) return;
+    $("[data-pm-thumb]",m).innerHTML=mockThumb(p.palette,i,p.v);
+    $("[data-pm-cat]",m).textContent=p.cat;
+    $("[data-pm-year]",m).textContent=p.year+" · "+p.status;
+    $("[data-pm-title]",m).innerHTML=`<span class="s">malik/</span>${p.title}`;
+    $("[data-pm-desc]",m).textContent=p.long||p.sub;
+    $("[data-pm-tech]",m).innerHTML=(p.stack||[]).map(t=>`<span class="pm-chip"><i style="background:${LANG[t]||"#888"}"></i>${t}</span>`).join("");
+    let links="";
+    if(p.live&&p.live!=="#") links+=`<a class="pill solid" href="${p.live}" target="_blank" rel="noopener">Live ↗</a>`;
+    if(p.repo&&p.repo!=="#") links+=`<a class="pill" href="${p.repo}" target="_blank" rel="noopener">GitHub ↗</a>`;
+    if(!links) links=`<span class="pmodal-soon">// in progress — links coming soon</span>`;
+    $("[data-pm-links]",m).innerHTML=links;
+    m.classList.add("show"); m.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden";
+  }
+  function close(){ m.classList.remove("show"); m.setAttribute("aria-hidden","true"); document.body.style.overflow=""; }
+  $$("[data-pmclose]",m).forEach(el=>el.addEventListener("click",close));
+  document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&m.classList.contains("show")) close(); });
+  $$(".card").forEach(card=>card.addEventListener("click",()=>open(+card.dataset.i)));
 }
 
 /* ============================ vanilla continuous anims ============================ */
@@ -249,7 +325,7 @@ function initTheme(){
 function initContactForm(){
   const form=$("[data-contact-form]"); if(!form) return;
   const note=$("[data-cf-note]");
-  const EMAIL="hello@malikafan.dev"; /* ← put your real email here later (or plug a Formspree endpoint) */
+  const EMAIL="iam.malikafan@gmail.com"; /* ← your email (or plug a Formspree endpoint later) */
   form.addEventListener("submit",e=>{
     e.preventDefault();
     const name=(form.name.value||"").trim(), email=(form.email.value||"").trim(), msg=(form.message.value||"").trim();
@@ -267,7 +343,7 @@ window.addEventListener("DOMContentLoaded",()=>{
   try{
     hydrate();
     initCodeWin(); initCodeRain(); initChips(); initStatusbar(); initDeployLog(); initTerminal();
-    initPointer(); initReveal(); initNav(); initWork(); initTheme(); initContactForm();
+    initPointer(); initReveal(); initNav(); initWork(); initTheme(); initContactForm(); initProjectModal();
     setTimeout(()=>{ const l=$("#loader"); l.classList.add("hide"); setTimeout(()=>l.style.display="none",650); },700);
   }catch(err){ console.error(err); const l=$("#loader"); if(l) l.style.display="none"; $$(".reveal").forEach(el=>el.classList.add("in")); }
 });
