@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Malik Afan — Software Engineer</title>
+<meta name="description" content="Personal portfolio — software, automation and web engineering." />
+<script>(function(){try{var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="sky"></div>
+<div class="grain"></div>
+<div id="loader"><div class="m" data-mark></div><div class="mono2">&gt; loading…</div><div class="t"><div class="b"></div></div></div>
+
+<div class="floatbar">
+  <span class="fb-name" data-fb-name></span>
+  <span class="fb-links" data-fb-links></span>
+  <a class="pill solid" href="#contact">Let's talk <span class="a">↗</span></a>
+</div>
+
+<div class="frame">
+  <nav class="nav">
+    <span class="pill" data-availability><span class="dot"></span></span>
+    <div class="links" data-nav></div>
+    <div class="nav-right">
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
+        <svg class="ic-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="currentColor"/></svg>
+        <svg class="ic-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6 19 19M19 5l-1.4 1.4M6.4 17.6 5 19"/></g></svg>
+      </button>
+      <a class="pill solid" href="#contact" data-cursor>Let's talk <span class="a">↗</span></a>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="coderain" aria-hidden="true"></div>
+    <div class="blobs" aria-hidden="true">
+      <div class="blob b1" data-depth="16"><div class="blob-i"></div></div>
+      <div class="blob b2" data-depth="22"><div class="blob-i"></div></div>
+    </div>
+    <div class="hero-meta mono">
+      <span><span class="k">Based in</span> <span data-loc></span></span>
+      <span><span class="tk-com">//</span> <span data-current></span></span>
+    </div>
+
+    <h1 class="hero-name" data-hero-name></h1>
+
+    <div class="hero-portrait">
+      <img class="pf-img pf-light" src="assets/portrait.png" alt="Malik Afan" />
+      <img class="pf-img pf-dark" src="assets/portrait-dark.png" alt="Malik Afan" />
+    </div>
+
+    <div class="hero-foot">
+      <div class="hero-role">
+        <h2 data-role></h2>
+        <p class="hero-blurb" data-blurb></p>
+        <a class="pill solid" href="#work">Let's collaborate <span class="a">↗</span></a>
+      </div>
+      <div class="hero-right">
+        <a class="badge2" href="#contact" aria-label="Let's build something">
+          <svg viewBox="0 0 120 120"><defs><path id="bp2" d="M60,60 m-42,0 a42,42 0 1,1 84,0 a42,42 0 1,1 -84,0"/></defs><text><textPath href="#bp2">• let's build something • available for work </textPath></text></svg>
+          <span class="ctr"><span>↗</span></span>
+        </a>
+        <div class="hero-socials" data-socials></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee clients"><span class="lab">Trusted by</span><div class="mqwrap"><div class="mq-track cl rev" data-clients></div></div></div>
+
+  <section class="about">
+    <div>
+      <p class="lead"><span class="mask reveal"><span data-lead></span></span></p>
+      <p class="body reveal" data-body></p>
+      <div class="taglist reveal" data-tags></div>
+      <div class="codeblock term reveal" style="margin-top:2rem">
+        <div class="cb-bar"><i></i><i></i><i></i><em>~/afan — zsh</em></div>
+        <div class="cb-body"><span style="color:var(--c-com)">$</span> <span data-type></span><span class="cur"></span></div>
+      </div>
+    </div>
+    <div class="about-r">
+      <div class="codeblock reveal">
+        <div class="cb-bar"><i></i><i></i><i></i><em>profile.ts</em></div>
+        <div class="cb-body" data-profile></div>
+      </div>
+      <div class="stats" data-stats></div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="chips-float" aria-hidden="true"></div>
+    <div class="sec-head"><div><div class="sec-idx reveal"><b>//</b> 01 — services</div><h2 class="sec-title reveal">What I <span class="slash">/</span>do</h2></div><p class="sec-note reveal code-note"><span class="tk-kw">const</span> services <span class="op">=</span> skills.<span class="tk-fn">filter</span>(s <span class="op">=></span> mastered)<span class="tk-com">  // end to end</span></p></div>
+    <div class="svc-grid" data-services></div>
+  </section>
+
+  <div class="marquee"><div class="mq-track tech" data-marquee></div></div>
+
+  <section id="work" class="section">
+    <div class="chips-float" aria-hidden="true"></div>
+    <div class="sec-head"><div><div class="sec-idx reveal"><b>//</b> 02 — selected work</div><h2 class="sec-title reveal"><span class="slash">/</span>Selected Work</h2></div><a class="pill reveal" href="#work" data-cursor>View all <span class="a">↗</span></a></div>
+    <div class="work-bar reveal"><div class="tabs" data-tabs></div></div>
+    <div class="work-grid" data-projects></div>
+  </section>
+
+  <section id="process" class="section">
+    <div class="sec-head"><div><div class="sec-idx reveal"><b>//</b> 03 — how I work</div><h2 class="sec-title reveal">A simple <span class="slash">/</span>process</h2></div><p class="sec-note reveal code-note"><span class="tk-kw">while</span> (building) <span class="pun">{</span> <span class="tk-fn">shipSmall</span>() <span class="pun">}</span><span class="tk-com">  // no theatre</span></p></div>
+    <div class="process" data-process></div>
+  </section>
+
+  <section class="deploy reveal">
+    <div class="codeblock">
+      <div class="cb-bar"><i></i><i></i><i></i><em>deploy — production</em></div>
+      <div class="cb-body" data-deploy></div>
+    </div>
+  </section>
+
+  <section id="experience" class="exp-panel reveal">
+    <div class="exp-top"><span class="exp-ghost">Experience</span><h2 class="exp-title"><span class="slash">/</span>Experience</h2><span class="exp-years" data-years></span></div>
+    <div class="exp-list" data-experience></div>
+  </section>
+
+  <section id="now" class="section">
+    <div class="sec-head"><div><div class="sec-idx reveal"><b>//</b> 04 — right now</div><h2 class="sec-title reveal">Currently <span class="slash">/</span>up to</h2></div></div>
+    <div class="now-wrap">
+      <div class="now-list" data-now></div>
+      <div class="codeblock gitlog reveal">
+        <div class="cb-bar"><i></i><i></i><i></i><em>git log --oneline</em></div>
+        <div class="cb-body" data-gitlog></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section">
+    <div class="sec-head"><div><div class="sec-idx reveal"><b>//</b> 05 — kind words</div><h2 class="sec-title reveal">What people <span class="slash">/</span>say</h2></div></div>
+    <div class="tcards" data-testimonials></div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="chips-float" aria-hidden="true"></div>
+    <a class="badge2 c-badge" href="#contact" data-cursor aria-label="Let's talk"><svg viewBox="0 0 120 120"><text><textPath href="#bp2">• let's talk • available for work • </textPath></text></svg><span class="ctr"><span>↗</span></span></a>
+    <span class="pill ava reveal" data-availability2><span class="dot"></span></span>
+    <div class="prompt reveal"><span class="p">$</span> ./contact.sh <span style="color:var(--faint)">--available</span></div>
+    <h2 class="reveal" data-contact-title></h2>
+    <form class="contact-form reveal" data-contact-form novalidate>
+      <div class="cf-grid">
+        <label class="cf-field"><span class="cf-lab">// name</span><input type="text" name="name" required autocomplete="name" placeholder="Your name" /></label>
+        <label class="cf-field"><span class="cf-lab">// email</span><input type="email" name="email" required autocomplete="email" placeholder="you@email.com" /></label>
+      </div>
+      <label class="cf-field"><span class="cf-lab">// message</span><textarea name="message" rows="4" required placeholder="Tell me about the project or role…"></textarea></label>
+      <div class="cf-actions">
+        <button type="submit" class="pill solid cf-send">Send message <span class="a">↗</span></button>
+        <span class="cf-note" data-cf-note aria-live="polite"></span>
+      </div>
+    </form>
+    <div class="cta reveal" data-contact-cta></div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-cmt">// end of file — thanks for scrolling</div>
+    <div class="foot-grid">
+      <div class="fbrand-col">
+        <div class="fbrand" data-fbrand></div>
+        <p class="ftag">// software · automation · web engineering</p>
+        <span class="fstatus"><i></i> available for new work</span>
+      </div>
+      <div class="fcol" data-fnav></div>
+      <div class="fcol" data-fsocial></div>
+    </div>
+    <div class="fbot">
+      <span><span class="p">$</span> whoami → malik-afan</span>
+      <span>© 2026 · commit <span class="hash">a3f9c1</span> · built with care</span>
+    </div>
+  </footer>
+</div>
+
+<div class="statusbar">
+  <span class="seg accent">⎇ main</span>
+  <span class="seg hide-sm" data-lncol>Ln 42, Col 8</span>
+  <span class="seg hide-sm">UTF-8</span>
+  <span class="seg">TypeScript</span>
+  <span class="seg push"><span class="blink"></span> build passing</span>
+  <span class="seg" data-clock>--:--:--</span>
+</div>
+
+<div class="hover-preview"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
