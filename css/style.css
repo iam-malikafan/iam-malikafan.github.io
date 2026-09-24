@@ -254,6 +254,24 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
 .stat .l{ color:var(--dim); font-size:.88rem; margin-top:.2rem; }
 
 .svc-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(1rem,2.2vw,1.6rem); }
+
+/* hero buttons row */
+.hero-btns{ display:flex; gap:.6rem; flex-wrap:wrap; }
+@media (max-width:860px){ .hero-btns{ justify-content:center; } }
+
+/* skills grid */
+.skills-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:clamp(1rem,2.2vw,1.5rem); }
+.skill-cat{ border:1px solid var(--line); border-radius:18px; padding:clamp(1.2rem,2.6vw,1.6rem); background:var(--card); transition:border-color .35s var(--ease), transform .35s var(--ease); }
+.skill-cat:hover{ border-color:var(--ink); transform:translateY(-4px); }
+.skill-cat .sk-head{ display:flex; align-items:center; gap:.6rem; margin-bottom:1rem; }
+.skill-cat .sk-n{ font-family:var(--fm); font-size:.72rem; color:var(--green); }
+.skill-cat h3{ font-family:var(--fd); font-weight:600; font-size:1.1rem; }
+.skill-cat .sk-items{ display:flex; flex-wrap:wrap; gap:.5rem; }
+.sk-chip{ display:inline-flex; align-items:center; gap:.45rem; font-family:var(--fm); font-size:.8rem; color:var(--ink-2); border:1px solid var(--line); border-radius:100px; padding:.35rem .75rem; background:var(--card-2); }
+.sk-chip i{ width:8px; height:8px; border-radius:50%; display:inline-block; }
+
+/* accessibility: visible keyboard focus */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, [tabindex]:focus-visible{ outline:2px solid var(--green); outline-offset:2px; border-radius:8px; }
 .svc{ border:1px solid var(--line); border-radius:20px; padding:clamp(1.5rem,3vw,2.2rem); background:var(--card); position:relative; overflow:hidden; transition:transform .5s var(--ease), box-shadow .5s var(--ease); }
 .svc:hover{ transform:translateY(-5px); box-shadow:0 24px 50px -30px rgba(30,34,40,.4); }
 .svc .ic{ width:46px; height:46px; border-radius:12px; background:var(--card-2); display:grid; place-items:center; margin-bottom:1.2rem; color:var(--ink); }

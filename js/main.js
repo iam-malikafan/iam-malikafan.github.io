@@ -9,7 +9,7 @@ const SITE = {
   identity:{ first:"Malik", last:"Afan", brand:"Malik Afan", role:"Junior Software Engineer",
     blurb:"Full-stack developer with a backend focus — I build APIs, services and automations in Python & Node.js, deploy and run them on Linux servers, and handle the frontend when a project needs it.",
     availability:"Available for new work", location:"Pakistan", current:"building backends & automations", years:"1+ years" },
-  nav:[{label:"Services",href:"#services",count:"04"},{label:"Work",href:"#work",count:"06"},{label:"Experience",href:"#experience",count:""},{label:"Contact",href:"#contact"}],
+  nav:[{label:"Services",href:"#services",count:"04"},{label:"Skills",href:"#skills",count:"05"},{label:"Work",href:"#work",count:"06"},{label:"Experience",href:"#experience",count:""},{label:"Contact",href:"#contact"}],
   socials:[
     {k:"GitHub",href:"https://github.com/iam-malikafan"},
     {k:"LinkedIn",href:"https://www.linkedin.com/in/malikafan"},
@@ -27,6 +27,13 @@ const SITE = {
     {icon:"web",title:"Full-Stack Web Apps",sig:"buildApp()",desc:"End-to-end apps — backend, database and a clean frontend."},
     {icon:"auto",title:"AI Automation",sig:"automate()",desc:"Automating repetitive tasks and building AI-powered workflows."} ],
   marquee:["Python","Node.js","JavaScript","Express","REST APIs","MySQL","SQL","SQLite","Linux","Git","HTML","CSS","AI Automation"],
+  skills:[
+    {cat:"Backend",items:["Python","Node.js","Express","REST APIs"]},
+    {cat:"Databases",items:["MySQL","SQL","SQLite"]},
+    {cat:"Frontend",items:["HTML","CSS","JavaScript"]},
+    {cat:"Tools & Ops",items:["Linux","Git","Server Deployment"]},
+    {cat:"Sharpening next",items:["AI Automation","Advanced Node.js","System Design"]},
+  ],
   projects:[
     {title:"portfolio-site",cat:"Live",tag:"Live site",year:"2025",sub:"This portfolio — hand-coded, no frameworks",palette:["#B0A0FF","#6A5BE0"],v:1,lang:"JavaScript",status:"live",
       stack:["HTML","CSS","JavaScript"],live:"https://iam-malikafan.github.io",repo:"https://github.com/iam-malikafan/iam-malikafan.github.io",
@@ -131,6 +138,7 @@ function hydrate(){
   const cats=["All",...Array.from(new Set(SITE.projects.map(p=>p.cat)))];
   $("[data-tabs]").innerHTML=cats.map((c,i)=>`<button class="tab${i===0?" active":""}" data-cat="${c}">${c}</button>`).join("");
   $("[data-projects]").innerHTML=SITE.projects.map((p,i)=>`<article class="card reveal" data-cat="${p.cat}" data-view data-i="${i}" style="cursor:pointer"><div class="thumb"><span class="tag">${p.tag}</span><span class="vis">${p.status}</span><span class="arw">↗</span><div class="art">${mockThumb(p.palette,i,p.v)}</div></div><div class="meta"><div class="top"><h3><span class="slash">malik/</span>${p.title}</h3><div class="yr" style="font-family:var(--fm);font-size:.78rem;color:var(--faint)">${p.year}</div></div><div class="sub">${p.sub}</div><div class="repo-meta"><span class="lang"><i style="background:${LANG[p.lang]||"#888"}"></i>${p.lang}</span><span>view details ↗</span></div></div></article>`).join("");
+  $("[data-skills]").innerHTML=SITE.skills.map((g,i)=>`<div class="skill-cat reveal"><div class="sk-head"><span class="sk-n">0${i+1}</span><h3>${g.cat}</h3></div><div class="sk-items">${g.items.map(t=>`<span class="sk-chip"><i style="background:${LANG[t]||"var(--green)"}"></i>${t}</span>`).join("")}</div></div>`).join("");
   $("[data-process]").innerHTML=SITE.process.map(s=>`<div class="step reveal"><div class="n">${s.n}</div><h3>${s.title}</h3><p>${s.desc}</p></div>`).join("");
   $("[data-years]").textContent=id.years+" of experience";
   $("[data-experience]").innerHTML=SITE.experience.map((e,i)=>`<div class="exp-row" data-i="${i}"><div class="en">0${i+1}</div><div><div class="co">${e.co}</div><div class="ro">${e.ro}</div></div><div class="dt">${e.dt}</div></div>`).join("");
@@ -303,7 +311,7 @@ function initNav(){
   new IntersectionObserver(es=>es.forEach(e=>floatbar.classList.toggle("show",!e.isIntersecting)),{rootMargin:"-120px 0px 0px 0px"}).observe(hero);
   const map={}; $$(".links a").forEach(a=>{ const id=a.getAttribute("href").slice(1); if(id) map[id]=a; });
   const io=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){ $$(".links a").forEach(x=>x.classList.remove("active")); if(map[en.target.id]) map[en.target.id].classList.add("active"); } }),{rootMargin:"-45% 0px -50% 0px"});
-  ["services","work","experience","contact"].forEach(id=>{ const s=document.getElementById(id); if(s) io.observe(s); });
+  ["services","skills","work","experience","contact"].forEach(id=>{ const s=document.getElementById(id); if(s) io.observe(s); });
 }
 function initWork(){
   const tabs=$$(".tab"), cards=$$(".card");
@@ -325,17 +333,30 @@ function initTheme(){
 function initContactForm(){
   const form=$("[data-contact-form]"); if(!form) return;
   const note=$("[data-cf-note]");
-  const EMAIL="iam.malikafan@gmail.com"; /* ← your email (or plug a Formspree endpoint later) */
-  form.addEventListener("submit",e=>{
+  /* ── Working contact form ─────────────────────────────────────────────
+     Get a FREE access key at https://web3forms.com (enter your email → key
+     is emailed instantly). Paste it below and messages land in your inbox.
+     Until then it falls back to opening your email app (mailto).            */
+  const ACCESS_KEY="YOUR_WEB3FORMS_ACCESS_KEY";
+  const EMAIL="iam.malikafan@gmail.com";
+  form.addEventListener("submit",async e=>{
     e.preventDefault();
     const name=(form.name.value||"").trim(), email=(form.email.value||"").trim(), msg=(form.message.value||"").trim();
     if(!name||!email||!msg){ note.textContent="// please fill in all fields"; note.className="cf-note err"; return; }
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ note.textContent="// enter a valid email"; note.className="cf-note err"; return; }
-    const subject=encodeURIComponent("Portfolio message from "+name);
-    const body=encodeURIComponent(msg+"\n\n— "+name+" ("+email+")");
-    window.location.href="mailto:"+EMAIL+"?subject="+subject+"&body="+body;
-    note.textContent="// opening your email app…"; note.className="cf-note ok";
-    form.reset();
+    if(!ACCESS_KEY || ACCESS_KEY.indexOf("YOUR_")===0){
+      window.location.href="mailto:"+EMAIL+"?subject="+encodeURIComponent("Portfolio message from "+name)+"&body="+encodeURIComponent(msg+"\n\n— "+name+" ("+email+")");
+      note.textContent="// opening your email app…"; note.className="cf-note ok"; return;
+    }
+    note.textContent="// sending…"; note.className="cf-note";
+    try{
+      const res=await fetch("https://api.web3forms.com/submit",{method:"POST",
+        headers:{"Content-Type":"application/json","Accept":"application/json"},
+        body:JSON.stringify({access_key:ACCESS_KEY,name,email,message:msg,subject:"New portfolio message from "+name})});
+      const data=await res.json();
+      if(data.success){ note.textContent="// message sent — I'll reply soon ✓"; note.className="cf-note ok"; form.reset(); }
+      else{ note.textContent="// couldn't send — try again or email me directly"; note.className="cf-note err"; }
+    }catch(err){ note.textContent="// network error — please try again"; note.className="cf-note err"; }
   });
 }
 
