@@ -149,8 +149,8 @@ function hydrate(){
   $("[data-contact-title]").innerHTML=SITE.contact.titleLines.map(l=>accOutline(l)).join("<br>");
   $("[data-contact-cta]").innerHTML=SITE.contact.cta.map(c=>`<a class="pill${c.solid?" solid":""}" href="${c.href}"${extAttr(c.href)} data-cursor>${c.label}</a>`).join("");
   $("[data-fbrand]").textContent=id.brand;
-  $("[data-fnav]").innerHTML=`<h4>Menu</h4>`+SITE.nav.map(n=>`<a href="${n.href}">${n.label}</a>`).join("");
-  $("[data-fsocial]").innerHTML=`<h4>Elsewhere</h4>`+SITE.socials.map(s=>`<a href="${s.href}"${extAttr(s.href)}>${s.k}</a>`).join("");
+  $("[data-fnav]").innerHTML=`<p class="fcol-h">Menu</p>`+SITE.nav.map(n=>`<a href="${n.href}">${n.label}</a>`).join("");
+  $("[data-fsocial]").innerHTML=`<p class="fcol-h">Elsewhere</p>`+SITE.socials.map(s=>`<a href="${s.href}"${extAttr(s.href)}>${s.k}</a>`).join("");
 }
 
 /* ============================ hero code window ============================ */
@@ -202,7 +202,7 @@ function initProjectModal(){
   .pmodal-soon{ font-family:var(--fm); font-size:.82rem; color:var(--faint); }`;
   document.head.appendChild(style);
 
-  const m=document.createElement("div"); m.className="pmodal"; m.setAttribute("aria-hidden","true");
+  const m=document.createElement("div"); m.className="pmodal"; m.inert=true;
   m.innerHTML=`<div class="pmodal-bg" data-pmclose></div><div class="pmodal-card" role="dialog" aria-modal="true">
     <button class="pmodal-x" data-pmclose aria-label="Close">✕</button>
     <div class="pmodal-thumb" data-pm-thumb></div>
@@ -228,9 +228,9 @@ function initProjectModal(){
     if(p.repo&&p.repo!=="#") links+=`<a class="pill" href="${p.repo}" target="_blank" rel="noopener">GitHub ↗</a>`;
     if(!links) links=`<span class="pmodal-soon">// in progress — links coming soon</span>`;
     $("[data-pm-links]",m).innerHTML=links;
-    m.classList.add("show"); m.setAttribute("aria-hidden","false"); document.body.style.overflow="hidden";
+    m.classList.add("show"); m.inert=false; document.body.style.overflow="hidden";
   }
-  function close(){ m.classList.remove("show"); m.setAttribute("aria-hidden","true"); document.body.style.overflow=""; }
+  function close(){ m.classList.remove("show"); m.inert=true; document.body.style.overflow=""; }
   $$("[data-pmclose]",m).forEach(el=>el.addEventListener("click",close));
   document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&m.classList.contains("show")) close(); });
   $$(".card").forEach(card=>card.addEventListener("click",()=>open(+card.dataset.i)));
@@ -337,7 +337,7 @@ function initContactForm(){
      Get a FREE access key at https://web3forms.com (enter your email → key
      is emailed instantly). Paste it below and messages land in your inbox.
      Until then it falls back to opening your email app (mailto).            */
-  const ACCESS_KEY="01e122c7-e1a8-4f73-a384-ef96b46ca795";
+  const ACCESS_KEY="YOUR_WEB3FORMS_ACCESS_KEY";
   const EMAIL="iam.malikafan@gmail.com";
   form.addEventListener("submit",async e=>{
     e.preventDefault();
@@ -363,8 +363,10 @@ function initContactForm(){
 window.addEventListener("DOMContentLoaded",()=>{
   try{
     hydrate();
-    initCodeWin(); initCodeRain(); initChips(); initStatusbar(); initDeployLog(); initTerminal();
+    initCodeWin(); initStatusbar(); initDeployLog(); initTerminal();
     initPointer(); initReveal(); initNav(); initWork(); initTheme(); initContactForm(); initProjectModal();
+    /* defer purely-decorative background animations so they don't block first paint on mobile */
+    (window.requestIdleCallback||(fn=>setTimeout(fn,200)))(()=>{ initCodeRain(); initChips(); });
     setTimeout(()=>{ const l=$("#loader"); l.classList.add("hide"); setTimeout(()=>l.style.display="none",650); },700);
   }catch(err){ console.error(err); const l=$("#loader"); if(l) l.style.display="none"; $$(".reveal").forEach(el=>el.classList.add("in")); }
 });
