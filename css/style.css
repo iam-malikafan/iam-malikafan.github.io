@@ -2,7 +2,7 @@
 :root{
   --sky-1:#C7CBD1; --sky-2:#AEB3BA; --sky-3:#989DA5;
   --card:#FBFAF8; --card-2:#F2F1ED; --card-3:#EAE8E2;
-  --ink:#141518; --ink-2:#3A3B40; --dim:#787A82; --faint:#A9ABB2;
+  --ink:#141518; --ink-2:#3A3B40; --dim:#5F6167; --faint:#8C8F96;
   --line:rgba(20,21,24,0.10); --line-2:rgba(20,21,24,0.055);
   --dark:#1A1B1F; --dark-2:#212228; --dark-line:rgba(255,255,255,0.08);
   --d-text:#F3F2EF; --d-dim:#94959B;
