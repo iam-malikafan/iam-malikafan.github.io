@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iam-malikafan.github.io/sitemap.xml

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>404 — Page not found | Malik Afan</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230c0e12'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='18' font-weight='bold' fill='%233EC46B' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+<style>
+  :root{ --bg:#0b0d11; --panel:#14161b; --line:rgba(255,255,255,.1); --txt:#e9edf2; --dim:#8b929d; --green:#3ec46b; --red:#ff6b6b; --fm:ui-monospace,"JetBrains Mono","SF Mono",Menlo,Consolas,monospace; }
+  *{ margin:0; box-sizing:border-box; }
+  body{ min-height:100svh; display:grid; place-items:center; padding:1.5rem; font-family:var(--fm); color:var(--txt);
+    background:radial-gradient(60vw 40vh at 50% 0%, rgba(62,196,107,.08), transparent 70%), var(--bg); }
+  .win{ width:min(560px,100%); background:linear-gradient(180deg,#16181d,#0f1116); border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 40px 90px -40px rgba(0,0,0,.8); }
+  .bar{ display:flex; align-items:center; gap:.5rem; padding:.7rem .9rem; border-bottom:1px solid var(--line); }
+  .bar i{ width:11px; height:11px; border-radius:50%; display:inline-block; }
+  .bar i:nth-child(1){ background:#ff5f57; } .bar i:nth-child(2){ background:#febc2e; } .bar i:nth-child(3){ background:#28c840; }
+  .bar em{ font-style:normal; color:var(--dim); font-size:.75rem; margin-left:.4rem; }
+  .body{ padding:1.6rem 1.4rem; font-size:.9rem; line-height:1.9; }
+  .body .p{ color:var(--green); } .body .c{ color:var(--dim); } .body .r{ color:var(--red); }
+  h1{ font-size:clamp(3rem,12vw,5rem); letter-spacing:-.03em; margin:.4rem 0 .2rem; }
+  h1 .z{ color:var(--green); }
+  p.lead{ color:var(--dim); margin-bottom:1.3rem; }
+  a.home{ display:inline-flex; align-items:center; gap:.5rem; text-decoration:none; background:var(--green); color:#04120a; font-weight:600; padding:.7rem 1.1rem; border-radius:9px; transition:opacity .2s; }
+  a.home:hover{ opacity:.9; }
+  .cur{ display:inline-block; width:8px; height:1.05em; background:var(--green); vertical-align:-2px; animation:b 1s steps(1) infinite; }
+  @keyframes b{ 50%{ opacity:0; } }
+</style>
+</head>
+<body>
+  <main class="win" role="main">
+    <div class="bar"><i></i><i></i><i></i><em>~/malik-afan — zsh</em></div>
+    <div class="body">
+      <div><span class="p">$</span> open <span class="c">requested-page</span></div>
+      <div><span class="r">error:</span> <span class="c">404 — page not found</span></div>
+      <h1>4<span class="z">0</span>4</h1>
+      <p class="lead">This route doesn't exist (yet). Let's get you back home.</p>
+      <a class="home" href="/">cd ~ / back to home <span aria-hidden="true">↗</span></a>
+      <div style="margin-top:1.2rem;color:var(--dim)"><span class="p">$</span> <span class="cur"></span></div>
+    </div>
+  </main>
+</body>
+</html>

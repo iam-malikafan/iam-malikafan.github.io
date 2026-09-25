@@ -337,7 +337,7 @@ function initContactForm(){
      Get a FREE access key at https://web3forms.com (enter your email → key
      is emailed instantly). Paste it below and messages land in your inbox.
      Until then it falls back to opening your email app (mailto).            */
-  const ACCESS_KEY="YOUR_WEB3FORMS_ACCESS_KEY";
+  const ACCESS_KEY="01e122c7-e1a8-4f73-a384-ef96b46ca795";
   const EMAIL="iam.malikafan@gmail.com";
   form.addEventListener("submit",async e=>{
     e.preventDefault();
